@@ -1,0 +1,4 @@
+Apple, 2.5
+Orange, 3.0
+Apple, 3.0
+Orange, 3.2

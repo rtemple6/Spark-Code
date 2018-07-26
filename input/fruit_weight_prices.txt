@@ -1,0 +1,4 @@
+Apple, 10, 2.5
+Orange, 20, 3.0
+Apple, 15, 3.0
+Orange, 24, 3.2

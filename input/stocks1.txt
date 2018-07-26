@@ -1,0 +1,4 @@
+googl, 10.1
+facebook, 10.3
+googl, 11.3
+facebook, 10.2
