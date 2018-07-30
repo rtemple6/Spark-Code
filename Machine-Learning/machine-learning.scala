@@ -19,11 +19,13 @@ val Data = rawData.map{x=>
     //Vectors is method, will attrs in LabeledPoint()
     //Having prediction in last column is good design
     val featureVector = Vectors.dense(values.init)
+    // println(featureVector)
     //Last column for
     val target = values.last
+    // println(target)
     LabeledPoint(target, featureVector)
 }
-Data.collect.foreach(println)
+// Data.collect.foreach(println)
 
 //(what are categories associated with ur attrs eg. Currently Emplored (Y or N = 2), Education Label(Null, BS, MS, PHD = 4))
 //(Index, # of choices)
@@ -34,3 +36,4 @@ val model = DecisionTree.trainClassifier(Data,2, categoricalFeatureInfo, "gini",
 //What is likelyhood of these params that this candiate will be hired
 val testData = Vectors.dense(10, 1, 3, 1, 0, 0)
 val prediction = model.predict(testData)
+println("Model Tree:\n " + model.toDebugString)
