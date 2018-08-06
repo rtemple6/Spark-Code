@@ -4,6 +4,7 @@ import org.apache.spark.mllib.evaluation._
 import org.apache.spark.mllib.tree._
 import org.apache.spark.mllib.tree.model._
 import org.apache.spark.mllib.rdd._
+import org.apache.spark.sql.DataFrame
 
 // val denseVector = Vectors.dense(10,1,4,1,0,0)
 val file = sc.textFile("/home/temp/sparkcode/Machine-Learning/Input/input.csv")
@@ -26,6 +27,9 @@ val Data = rawData.map{x=>
     LabeledPoint(target, featureVector)
 }
 // Data.collect.foreach(println)
+
+val dataToDF = Data.toDF
+dataToDF.show
 
 //(what are categories associated with ur attrs eg. Currently Emplored (Y or N = 2), Education Label(Null, BS, MS, PHD = 4))
 //(Index, # of choices)
